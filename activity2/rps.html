@@ -1,0 +1,62 @@
+<html>
+    <head>
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <link rel = "stylesheet" type = "text/css" href = "animate.css">
+        <link rel = "stylesheet" type = "text/css" href = "rps.css">
+    </head>
+    
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        
+        <div>
+            <button id = "rock" onclick="rps('rock')">Rock</button>
+            <button id = "paper" onclick="rps('paper')">Paper</button>
+            <button id = "scissors" onclick="rps('scissors')">Scissors</button>
+        </div>
+        
+        <p id = "message">
+        </p>
+        <script>
+            function rps(item){
+                var random = Math.floor(Math.random() * 3);
+                var randomItem;
+                
+                if(random === 0){
+                   randomItem = 'rock';
+                   }else if(random === 1){
+                       randomItem = 'paper';
+                   }else{
+                       randomItem = 'scissors';
+                   }
+                
+                if(item === randomItem){
+                    document.getElementById("message").innerHTML = "Tie.";
+                }else if(randomItem === 'rock'){
+                    if(item === 'paper'){
+                        document.getElementById("message").innerHTML = "paper beats rock. you lose.";
+                    }else{
+                        document.getElementById("message").innerHTML = "rock beats scissors. you win.";
+                    }
+                
+                       
+                }else if(randomItem === 'paper'){
+                    if(item === 'scissors'){
+                        document.getElementById("message").innerHTML = "scissors beats rock. you lose.";
+                    }else{
+                        document.getElementById("message").innerHTML = "paper beat rock. you win.";
+                    }
+                
+                }else if(randomItem === 'scissors'){
+                    if(item === 'paper'){
+                        document.getElementById("message").innerHTML = "scissors beats paper. you win.";
+                    }else{
+                        document.getElementById("message").innerHTML = "rock beats scissors. you lose.";
+                    }
+                
+                    
+            }
+            }
+        </script>
+        
+    </body>
+</html>
