@@ -52,6 +52,24 @@
     
     <script>
         var audioElement;
+        
+        document.addEventListener('keyDown', function(event){
+            if(event.keyCode === 67){
+                playNote('c');
+            }else if(event.keyCode === 68){
+                playNote('d');
+            }else if(event.keyCode === 69){
+                playNote('e');
+            }else if(event.keyCode === 70){
+                playNote('f');
+            }else if(event.keyCode === 71){
+                playNote('g');
+            }else if(event.keyCode === 65){
+                playNote('a');
+            }else if(event.keyCode === 66){
+                playNote('b');
+            }
+        })
         function playNote(note){
             audioElement = document.getElementById(note+'Audio');
             audioElement.currentTime = 0;
